@@ -1,0 +1,29 @@
+﻿@page
+@using System.Diagnostics
+@model OsPorocess.Pages.DetailsModel
+@{
+    //Process? process = ViewData["P"] as Process;
+    ViewData["Title"] = $"Process with ID={Model.SingleProcess.Id}";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td>Process Name</td>
+            <td>@Model.SingleProcess.ProcessName</td>
+        </tr>
+        @* <tr>
+            <td>Start Time</td>
+            <td>@process.StartTime</td>
+        </tr> *@
+        <tr>
+            <td>Number of threads</td>
+            <td>@Model.SingleProcess.Threads.Count</td>
+        </tr>
+    </table>
+    <div>
+        <a asp-page="./index">Back to list</a>
+    </div>
+</div>
